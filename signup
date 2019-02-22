@@ -1,0 +1,48 @@
+#include "Headerfile.h"
+extern void Socket(void);
+extern void Connect(void);
+extern void Interface(void);
+extern volatile int sock;
+int Signup(){
+    char arr1[50],arr2[50],arr3[50],arr4[50];
+    printf("\n*************************************************************************\n");
+    printf("\n|+++------------------------------------------------------------------+++|\n");
+    printf("|+++------------------------------------------------------------------+++|\n");
+    printf("|+++------------------------------SIGNUP------------------------------+++|\n");
+    printf("|                            FIRST NAME :                                |\n");
+    printf("|                                        ");
+    scanf("%s",arr1);
+    printf("|                            LAST NAME :                                 |\n");
+    printf("|                                       ");
+    scanf("%s",arr2);
+    printf("|                            USER NAME :                                 |\n");
+    printf("|                                       ");
+    scanf("%s",arr3);
+    printf("|                            PASSWORD :                                  |\n");
+    printf("|                                      ");
+    scanf("%s",arr4);
+    printf("|+++-------------------THANK YOU FOR REGISTRATION---------------------+++|\n");
+    printf("|+++------------------------------------------------------------------+++|\n");
+    printf("|+++------------------------------------------------------------------+++|\n");
+
+    /* CONNECTING TO THE SERVER */
+   if(sock==-1){
+    Socket();
+    Connect();
+  }
+
+ int status=0;
+   send(sock,&status ,sizeof(int), 0);
+   send(sock, arr1, 50, 0);
+   send(sock, arr2, 50, 0);
+   send(sock, arr3, 50, 0);
+   send(sock, arr4, 50, 0);
+   recv(sock, &status, sizeof(int), 0);
+    
+
+    if(status==0)
+      Interface();
+    else
+      return 1;
+
+  }
