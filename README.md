@@ -1,7 +1,7 @@
 This is an online cloud storage system
 ===========
 
-I have implemented an online server using  c program which can accept multiple client request at a time. 
+I have implemented an online server using  c programming which can accept multiple client request at a time. 
 It works like FTP (File transfer protocol) but it uses only one port which can be used to send control and data messages on the same port.
 
 Functionalities
