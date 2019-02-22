@@ -9,7 +9,7 @@ Functionality
 
 1. Multiple clients can log in to the system at a time.
 2. A user can upload/download/delete any number of files he/she wishes to. One user can share his/her files with other users too.
-3. No user is allowed to browse other user's directory. If a new user signs up, a new empty directory should be created inside the root directory (if not already present).
+3. No user is allowed to browse other user's directory. If a new user signs up, a new empty directory created inside the root directory (if not already present).
 4. The server is maintaining a log file for each user. The file has following details: file name, action (upload/download/delete/share), IP address (of the user machine), date and time.
 
 User Actions which are allowed in the system
